@@ -62,11 +62,23 @@ public class Exercicios  extends Console {
 	 * @param n3 3ª nota do aluno
 	 * @return media = Média Ponderada
 	 */
-	public static double calcularMediaArmonica (double n1, double n2, double n3) {
+	public static double calcularMediaHarmonica (double n1, double n2, double n3) {
 		
 		return 3/((1/n1)+(1/n2)+(1/n3));
 		
 	}
 	
+	/**
+	 * Converter Celcius para Fahrenheit
+	 * @param C Temperatura em °C
+	 * @return Temperatura em °F
+	 */
+	public static double converterCelciusParaFahrenheit(double C) {
+		
+		//1.8 * C + 32
+		
+		return (4.5 * C + 80) / 2.5;
+		
+	}
 
 }

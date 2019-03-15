@@ -1,6 +1,6 @@
 
 /**
- * A classe principal vai fazer o que você quer que ela faça.
+ * Classe Principal da Lista de Exercicios 01.
  * 
  * @author 1829799
  * @version 1.0
@@ -19,7 +19,8 @@ public class Principal {
 						"Distancia entre pontos",
 						"Média Aritmética",
 						"Média Ponderada",
-						"Média Armônica"};
+						"Média Harmônica",
+						"Converter °C para °F"};
 	
 	boolean continua = true;
 	
@@ -41,7 +42,10 @@ public class Principal {
 		calcularMediaPonderada();
 		break;
 	case 5:
-		calcularMediaArmonica();
+		calcularMediaHarmonica();
+		break;
+	case 6:
+		converterCelciusParaFahrenheit();
 		break;
 	case -1:
 		continua = false;
@@ -112,14 +116,25 @@ public class Principal {
 	/**
 	 * Exercício 05 - Calcular a média armônica de três notas
 	 */
-	public static void calcularMediaArmonica () {
+	public static void calcularMediaHarmonica () {
 		
 		double n1 = Console.recuperaDecimal("Digite a 1ª Nota: ");
 		double n2 = Console.recuperaDecimal("Digite a 2ª Nota: ");
 		double n3 = Console.recuperaDecimal("Digite a 3ª Nota: ");
 		
-		double mediaA = Exercicios.calcularMediaArmonica(n1, n2, n3);
+		double mediaA = Exercicios.calcularMediaHarmonica(n1, n2, n3);
 		
 		System.out.printf("Média Armônica: %.2f", mediaA);
+	}
+	
+	/**
+	 * Exercicio 06 - Coverter graus Celcius para Fahrenheit
+	 */
+	public static void converterCelciusParaFahrenheit () {
+		
+		double C = Console.recuperaDecimal("Informa a temperatura em °C: ");
+		double F = Exercicios.converterCelciusParaFahrenheit(C);
+		
+		System.out.printf("Peso ideal: %.0f°F\n\n", F);
 	}
 }

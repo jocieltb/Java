@@ -1,5 +1,5 @@
 /**
- * Classe para executar os exercícios da lista 01.
+ * Classe para executar os exercícios da lista 03.
  * 
  * @author 1829799
  *
@@ -37,6 +37,12 @@ public class Exercicios  extends Console {
 			pesoIdeal = altura * FATOR_FEMININO_1 - FATOR_FEMININO_2;
 		}
 		return pesoIdeal;
+	}
+	
+	public static double converterCelciusParaFahrenheit(double C) {
+		
+		return (4.5 * C + 80) / 2.5;
+		
 	}
 
 }
