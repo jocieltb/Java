@@ -78,6 +78,18 @@ public class Exercicios  extends Console {
 		//1.8 * C + 32
 		
 		return (4.5 * C + 80) / 2.5;
+	}
+	
+	/**
+	 * Calcular Volume do Cilindro
+	 * 
+	 * @param raio Raio do Cilindro
+	 * @param altura Altura do Cilindro
+	 * @return Volume do Cilindro
+	 */
+	public static double calcularVolumeCilindro(double raio, double altura) {
+		
+		return 3.14 * Math.pow(raio, 2) * altura;
 		
 	}
 

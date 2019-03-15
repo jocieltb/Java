@@ -20,7 +20,8 @@ public class Principal {
 						"Média Aritmética",
 						"Média Ponderada",
 						"Média Harmônica",
-						"Converter °C para °F"};
+						"Converter °C para °F",
+						"Volume do Cilindro"};
 	
 	boolean continua = true;
 	
@@ -46,6 +47,9 @@ public class Principal {
 		break;
 	case 6:
 		converterCelciusParaFahrenheit();
+		break;
+	case 7:
+		calcularVolumeCilindro();
 		break;
 	case -1:
 		continua = false;
@@ -137,4 +141,19 @@ public class Principal {
 		
 		System.out.printf("Peso ideal: %.0f°F\n\n", F);
 	}
+	
+	/**
+	 * Exercicio 07 - Calcular o Volume do Cilindro
+	 */
+	public static void calcularVolumeCilindro(){
+		
+		double raio = Console.recuperaDecimal("Informe o Raio do Cilindro: ");
+		double altura = Console.recuperaDecimal("Informe a Altura do Cilindro: ");
+		
+		double volume = Exercicios.calcularVolumeCilindro(raio, altura);
+		
+		System.out.printf("Volume do Cilindro: %.2f\n\n", volume);
+		
+	}
+	
 }
