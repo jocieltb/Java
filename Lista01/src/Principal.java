@@ -21,7 +21,8 @@ public class Principal {
 						"Média Ponderada",
 						"Média Harmônica",
 						"Converter °C para °F",
-						"Volume do Cilindro"};
+						"Volume do Cilindro",
+						"Calcular Consumo de Combustível"};
 	
 	boolean continua = true;
 	
@@ -51,6 +52,9 @@ public class Principal {
 	case 7:
 		calcularVolumeCilindro();
 		break;
+	case 8:
+		calcularConsumoCombustivel();
+		break;	
 	case -1:
 		continua = false;
 		break;
@@ -61,7 +65,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Execício 01 - Calcular enesimo termo da PA
+	 * Execício 01 - Calcular enesimo termo da PA.
 	 */
 	public static void calcularEnesimoTermoPa() {
 		
@@ -75,7 +79,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Exercício 02 - Calcular distancia entre 2 pontos no plano cartesiano
+	 * Exercício 02 - Calcular distancia entre 2 pontos no plano cartesiano.
 	 */
 	public static void calcularDistanciaEntreDoisPontos() {
 		double x1 = Console.recuperaDecimal("Informe a coordenada x1: ");
@@ -90,7 +94,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Exercício 03 - Calcula a média aritimética de três notas 
+	 * Exercício 03 - Calcula a média aritimética de três notas.
 	 */
 	public static void calcularMediaAritimetica() {
 		
@@ -105,7 +109,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Exercício 04 - Calcular a Média Ponderada de três notas
+	 * Exercício 04 - Calcular a Média Ponderada de três notas.
 	 */
 	public static void calcularMediaPonderada() {
 		double n1 = Console.recuperaDecimal("Digite a 1ª Nota: ");
@@ -118,7 +122,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Exercício 05 - Calcular a média armônica de três notas
+	 * Exercício 05 - Calcular a média armônica de três notas.
 	 */
 	public static void calcularMediaHarmonica () {
 		
@@ -132,7 +136,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Exercicio 06 - Coverter graus Celcius para Fahrenheit
+	 * Exercicio 06 - Coverter graus Celcius para Fahrenheit.
 	 */
 	public static void converterCelciusParaFahrenheit () {
 		
@@ -143,7 +147,7 @@ public class Principal {
 	}
 	
 	/**
-	 * Exercicio 07 - Calcular o Volume do Cilindro
+	 * Exercício 07 - Calcular o Volume do Cilindro.
 	 */
 	public static void calcularVolumeCilindro(){
 		
@@ -154,6 +158,17 @@ public class Principal {
 		
 		System.out.printf("Volume do Cilindro: %.2f\n\n", volume);
 		
+	}
+	/**
+	 * Exercício 08 - Calcular consumo de combustível.
+	 */
+	public static void calcularConsumoCombustivel() {
+		double tempo = Console.recuperaDecimal("Informe o Tempo da Viajem em Minutos: ");
+		double velocidade = Console.recuperaDecimal("Informe a Velocidade Média: ");
+		
+		double consumo = Exercicios.calcularConsumoCombustivel(tempo, velocidade);
+		
+		System.out.printf("Consumo de Conbustível: %.2f\n\n", consumo);
 	}
 	
 }

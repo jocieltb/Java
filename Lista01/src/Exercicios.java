@@ -32,7 +32,7 @@ public class Exercicios  extends Console {
 	}
 	
 	/**
-	 * Calcular distância entre 2 ponto no plano cartesiano
+	 * Calcula distância entre 2 ponto no plano cartesiano
 	 * @param x1 Coordenada de x do ponto 1
 	 * @param y1 Coordenada de y do ponto 1
 	 * @param x2 Coordenada de x do ponto 2
@@ -45,7 +45,7 @@ public class Exercicios  extends Console {
 	}
 	
 	/**
-	 * Calcular Média Ponderada
+	 * Calcula Média Ponderada
 	 * @param n1
 	 * @param n2
 	 * @param n3
@@ -69,7 +69,7 @@ public class Exercicios  extends Console {
 	}
 	
 	/**
-	 * Converter Celcius para Fahrenheit
+	 * Converte Celcius para Fahrenheit
 	 * @param C Temperatura em °C
 	 * @return Temperatura em °F
 	 */
@@ -81,7 +81,7 @@ public class Exercicios  extends Console {
 	}
 	
 	/**
-	 * Calcular Volume do Cilindro
+	 * Calcula Volume do Cilindro
 	 * 
 	 * @param raio Raio do Cilindro
 	 * @param altura Altura do Cilindro
@@ -92,5 +92,15 @@ public class Exercicios  extends Console {
 		return 3.14 * Math.pow(raio, 2) * altura;
 		
 	}
-
+	/**
+	 * Calcula consumo de combustível
+	 * @param tempo
+	 * @param velocidade
+	 * @return
+	 */
+	public static double calcularConsumoCombustivel(double tempo, double velocidade) {
+		
+		return (tempo * velocidade)/(12+60); 
+		
+	}
 }
