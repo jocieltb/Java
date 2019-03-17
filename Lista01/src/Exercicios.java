@@ -46,13 +46,15 @@ public class Exercicios  extends Console {
 	
 	/**
 	 * Calcula Média Ponderada
-	 * @param n1
-	 * @param n2
-	 * @param n3
-	 * @return
+	 * @param n1 Nota 1 do aluno
+	 * @param n2 Nota 2 do aluno
+	 * @param n3 Nota 3 do aluno
+	 * @return Media Ponderada
 	 */
 	public static double calcularMediaPonderada (double n1, double n2, double n3) {
+		
 		return ((n1*5)+(n2*3)+(n3*2)) / (5+3+2);
+		
 	}
 	
 	/**
@@ -60,7 +62,7 @@ public class Exercicios  extends Console {
 	 * @param n1 1ª nota do aluno
 	 * @param n2 2ª nota do aluno
 	 * @param n3 3ª nota do aluno
-	 * @return media = Média Ponderada
+	 * @return media = Média Harmonica
 	 */
 	public static double calcularMediaHarmonica (double n1, double n2, double n3) {
 		
@@ -75,9 +77,8 @@ public class Exercicios  extends Console {
 	 */
 	public static double converterCelciusParaFahrenheit(double C) {
 		
-		//1.8 * C + 32
+		return 1.8 * C + 32;
 		
-		return (4.5 * C + 80) / 2.5;
 	}
 	
 	/**
@@ -94,13 +95,26 @@ public class Exercicios  extends Console {
 	}
 	/**
 	 * Calcula consumo de combustível
-	 * @param tempo
+	 * @param tempo 
 	 * @param velocidade
 	 * @return
 	 */
 	public static double calcularConsumoCombustivel(double tempo, double velocidade) {
 		
-		return (tempo * velocidade)/(12+60); 
+		return ((tempo / 60) * velocidade)/12; 
+		
+	}
+
+	/**
+	 * Calcula valor da Entrada + acrescimo.
+	 * @param valorI Valor da entrada.
+	 * @param porcentagem Porcentagem de acrescimo.
+	 * @return
+	 */
+	public static double calcularValorEntrada(double valorI, double porcentagem) {
+		
+		return valorI + (valorI * porcentagem / 100);
 		
 	}
 }
+

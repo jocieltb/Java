@@ -22,7 +22,8 @@ public class Principal {
 						"Média Harmônica",
 						"Converter °C para °F",
 						"Volume do Cilindro",
-						"Calcular Consumo de Combustível"};
+						"Calcular Consumo de Combustível",
+						"calcular Valor da Entrada"};
 	
 	boolean continua = true;
 	
@@ -54,7 +55,10 @@ public class Principal {
 		break;
 	case 8:
 		calcularConsumoCombustivel();
-		break;	
+		break;
+	case 9:
+		calcularValorEntrada();
+		break;
 	case -1:
 		continua = false;
 		break;
@@ -89,7 +93,7 @@ public class Principal {
 		
 		double distancia = Exercicios.calcularDistanciaEntreDoisPontos(x1, y1, x2, y2);
 		
-		System.out.printf("Distancia entre os 2 pontos %.2f", distancia);
+		System.out.printf("Distancia entre os 2 pontos %.2f\n\n", distancia);
 		
 	}
 	
@@ -104,7 +108,7 @@ public class Principal {
 	
 		double media = Exercicios.calcularMediaAritimetica(n1, n2, n3);
 	
-		System.out.printf("Média Aritimetica: %.2f", media);
+		System.out.printf("Média Aritimetica: %.2f\n\n", media);
 			
 	}
 	
@@ -118,7 +122,7 @@ public class Principal {
 		
 		double mediaP = Exercicios.calcularMediaPonderada(n1, n2, n3);
 		
-		System.out.printf("Média Ponderada: %.2f", mediaP);
+		System.out.printf("Média Ponderada: %.2f\n\n", mediaP);
 	}
 	
 	/**
@@ -132,7 +136,7 @@ public class Principal {
 		
 		double mediaA = Exercicios.calcularMediaHarmonica(n1, n2, n3);
 		
-		System.out.printf("Média Armônica: %.2f", mediaA);
+		System.out.printf("Média Armônica: %.2f\n\n", mediaA);
 	}
 	
 	/**
@@ -171,4 +175,15 @@ public class Principal {
 		System.out.printf("Consumo de Conbustível: %.2f\n\n", consumo);
 	}
 	
+	/**
+	 * Exercício 09 - Calcular valor da Entrada + Acrescimo
+	 */
+	public static void calcularValorEntrada() {
+		double valorI = Console.recuperaDecimal("Informe o valor de entrada: ");
+		double porcentagem = Console.recuperaDecimal("Informe a porcentagem: ");
+		
+		double valor = Exercicios.calcularValorEntrada(valorI, porcentagem);
+		
+		System.out.printf("Valor: %.2f\n\n", valor);
+	}
 }
