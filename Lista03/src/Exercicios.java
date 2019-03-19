@@ -39,10 +39,4 @@ public class Exercicios  extends Console {
 		return pesoIdeal;
 	}
 	
-	public static double converterCelciusParaFahrenheit(double C) {
-		
-		return (4.5 * C + 80) / 2.5;
-		
-	}
-
 }

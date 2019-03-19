@@ -18,9 +18,7 @@ public class Principal {
 			switch (opcao) {
 			case 1:
 				calcularPesoIdeal();
-				
-				break;
-				
+				break;				
 			
 			case -1:
 				
