@@ -8,7 +8,8 @@ public class Principal {
 		String[] opcoes = { "Mostrar Vetor Primitivo",
 							"Mostrar ArrayList",
 							"Maior Elemento",
-							"Menor Elemento"};
+							"Menor Elemento",
+							"Vetor Invertido"};
 
 		boolean continua = true;
 
@@ -36,7 +37,12 @@ public class Principal {
 				Integer menor = Collections.min(menores);
 				System.out.println("O menor elemento do array " + menores + " é " + menor + ".");
 				break;
-
+			case 5:
+				ArrayList<Integer> inverso = criarArrayInteiro();
+				Collections.reverse(inverso);
+				System.out.println(inverso);
+		
+				break;
 			case -1:
 
 				continua = false;
