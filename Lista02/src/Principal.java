@@ -1,10 +1,14 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Principal {
 
 	public static void main(String[] args) {
 
-		String[] opcoes = { "Metodos" };
+		String[] opcoes = { "Mostrar Vetor Primitivo",
+							"Mostrar ArrayList",
+							"Maior Elemento",
+							"Menor Elemento"};
 
 		boolean continua = true;
 
@@ -16,6 +20,21 @@ public class Principal {
 			case 1:
 				int[] vetor = criarVetorInteiro();
 				imprimeVetorInteiro(vetor);
+				break;
+			case 2:
+				ArrayList<Integer> array = criarArrayInteiro();
+				System.out.println(array);
+				break;
+			case 3:
+				ArrayList<Integer> maiores = criarArrayInteiro();
+				Integer maior = Collections.max(maiores);
+				System.out.println("O maior elemento do array " + maiores + " é " + maior + ".");
+				break;
+				
+			case 4:
+				ArrayList<Integer> menores = criarArrayInteiro();
+				Integer menor = Collections.min(menores);
+				System.out.println("O menor elemento do array " + menores + " é " + menor + ".");
 				break;
 
 			case -1:
@@ -36,7 +55,10 @@ public class Principal {
 	public static ArrayList<Integer> criarArrayInteiro(){
 		
 		int quantidade = Console.recuperaInteiro("Informe a quantidade de Intens: ");
-		ArrayList
+		ArrayList<Integer> array = new ArrayList<>();
+		for (int i = 0; i < quantidade; i++) {
+			array.add(Console.recuperaInteiro("Informe o valor " + (i + 1) + ":"));
+		}
 		
 		return array;
 	}
@@ -49,7 +71,7 @@ public class Principal {
 		} else {
 			System.out.print("[");
 			for (int i = 0; i < valores.length - 1; i++) {
-				System.out.print(valores[i] + ',');
+				System.out.print(valores[i] + ",");
 			}
 			System.out.println(valores[valores.length - 1]);
 			System.out.print("]");
