@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Classe Principal da Lista de Exercicios 03.
  * @author 1829799
@@ -44,7 +46,11 @@ public static void calcularPesoIdeal() {
 	System.out.printf("Peso ideal: %.2f\n\n", pesoIdeal);
 }
 
-
+public static void criarSerieFibonacci() {
+	int quantidade = Console.recuperaInteiro("Informe o Tamanho da Sequencia: ");
+	ArrayList<Integer> fiboArray = Exercicios.criarSerieFibonacciComArray(quantidade);
+	System.out.println("fiboArray");
+}
 
 }
 	
