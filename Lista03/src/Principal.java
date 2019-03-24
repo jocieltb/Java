@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 /**
  * Classe Principal da Lista de Exercicios 03.
@@ -24,7 +24,7 @@ public class Principal {
 				calcularPesoIdeal();
 				break;
 			case 2:
-				criarSerieFibonacci();
+				
 				break;
 
 			case -1:
@@ -50,13 +50,5 @@ public class Principal {
 		System.out.printf("Peso ideal: %.2f\n\n", pesoIdeal);
 	}
 	
-	/**
-	 * Cria Serie Fibonacci
-	 */
-	public static void criarSerieFibonacci() {
-		int quantidade = Console.recuperaInteiro("Informe o Tamanho da Sequencia: ");
-		ArrayList<Integer> fiboArray = Exercicios.criarSerieFibonacciComArray(quantidade);
-		System.out.println(fiboArray);
-	}
-
+	
 }

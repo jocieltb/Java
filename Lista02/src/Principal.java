@@ -10,7 +10,11 @@ public class Principal {
 							"Menor Elemento",
 							"Vetor Invertido",
 							"Multiplicar Dois Vetores",
-							"Produto Escalar de Dois Vetores"};
+							"Produto Escalar de Dois Vetores",
+							"Produto Números Pares",
+							"Ordenar Maior",
+							"Serie Fibonacci",
+							"Analisar Vetor"};
 
 		boolean continua = true;
 
@@ -47,6 +51,18 @@ public class Principal {
 			case 6:
 				produtoEscalarDeDoisArray();
 				break;
+			case 7:
+				produtoNumerosPares();
+				break;
+			case 8:
+				
+				break;
+			case 9:
+				criarSerieFibonacci();
+				break;
+			case 10:
+				AnalisarVetor();
+				break;
 			case -1:
 
 				continua = false;
@@ -55,6 +71,39 @@ public class Principal {
 
 		} while (continua);
 	}
+	
+	private static void AnalisarVetor() {
+		System.out.println("Criar array");
+		double[] A = criarVetorDouble();
+				
+		ArrayList<Double> resultado = Exercicios.AnalisarVetor(A);
+	
+		System.out.println(resultado);
+		
+	}
+	
+	/**
+	 * Cria Serie Fibonacci
+	 */
+	public static void criarSerieFibonacci() {
+		int quantidade = Console.recuperaInteiro("Informe o Tamanho da Sequencia: ");
+		ArrayList<Integer> fiboArray = Exercicios.criarSerieFibonacciComArray(quantidade);
+		System.out.println(fiboArray);
+	}
+	
+	/**
+	 * Produto Escalar de dois vetores de inteiros.
+	 */
+	private static void produtoNumerosPares() {
+		System.out.println("Criar array");
+		int[] array = criarVetorInteiro();
+				
+		int resultado = Exercicios.produtoNumerosPares(array);
+		
+		System.out.println(resultado);
+		
+	}
+	
 	/**
 	 * Produto Escalar de dois vetores de inteiros.
 	 */

@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 /**
  * Classe para executar os exercícios da lista 03.
@@ -42,20 +42,5 @@ public class Exercicios  extends Console {
 	}
 	
 	
-	public static ArrayList<Integer> criarSerieFibonacciComArray (int quantidade){
-		
-		ArrayList<Integer> fibonacci = new ArrayList<>();
-		
-		for (int i = 0; i < quantidade; i++) {
-			if (i == 0 || i == 1) {
-				fibonacci.add(1);
-			} else {
-				fibonacci.add(fibonacci.get(i - 1) + fibonacci.get(i - 2));
-			}
-		}
-		
-		return fibonacci;
-		
-	}
 	
 }
