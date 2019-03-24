@@ -2,56 +2,61 @@ import java.util.ArrayList;
 
 /**
  * Classe Principal da Lista de Exercicios 03.
+ * 
  * @author 1829799
  *
  */
 public class Principal {
-	
+
 	public static void main(String[] args) {
-		
-		String[] opcoes = {"Calcular Peso Ideal"};
-		
+
+		String[] opcoes = { "Calcular Peso Ideal",
+							"Serie Fibonacci" };
+
 		boolean continua = true;
-		
+
 		do {
-			
+
 			int opcao = Console.mostrarMenu(opcoes, "Lista 03", null);
-			
+
 			switch (opcao) {
 			case 1:
 				calcularPesoIdeal();
-				break;				
-			
+				break;
+			case 2:
+				criarSerieFibonacci();
+				break;
+
 			case -1:
-				
+
 				continua = false;
 				break;
 			}
 
-			} while (continua);
-			
-		}
-		
-	
-/**
- * Calcular Peso Ideal
- */
-public static void calcularPesoIdeal() {
-	
-	String sexo = Console.recuperaTexto("Informe o Sexo: (M) para masculino (F) para feminino: ");
-	double altura = Console.recuperaDecimal("Informa Altura:");
-	
-	double pesoIdeal = Exercicios.calcularPesoIdeal(sexo, altura);
-	
-	System.out.printf("Peso ideal: %.2f\n\n", pesoIdeal);
-}
+		} while (continua);
 
-public static void criarSerieFibonacci() {
-	int quantidade = Console.recuperaInteiro("Informe o Tamanho da Sequencia: ");
-	ArrayList<Integer> fiboArray = Exercicios.criarSerieFibonacciComArray(quantidade);
-	System.out.println("fiboArray");
-}
+	}
 
-}
+	/**
+	 * Calcular Peso Ideal
+	 */
+	public static void calcularPesoIdeal() {
+
+		String sexo = Console.recuperaTexto("Informe o Sexo: (M) para masculino (F) para feminino: ");
+		double altura = Console.recuperaDecimal("Informa Altura:");
+
+		double pesoIdeal = Exercicios.calcularPesoIdeal(sexo, altura);
+
+		System.out.printf("Peso ideal: %.2f\n\n", pesoIdeal);
+	}
 	
+	/**
+	 * Cria Serie Fibonacci
+	 */
+	public static void criarSerieFibonacci() {
+		int quantidade = Console.recuperaInteiro("Informe o Tamanho da Sequencia: ");
+		ArrayList<Integer> fiboArray = Exercicios.criarSerieFibonacciComArray(quantidade);
+		System.out.println(fiboArray);
+	}
 
+}
