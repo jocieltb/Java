@@ -8,9 +8,10 @@ import java.util.Collections;
  *
  */
 public class Exercicios {
-		
+
 	/**
 	 * 11 - Mesclar elementos de dois vetores
+	 * 
 	 * @param arrayA Vetor A
 	 * @param arrayB Vetor B
 	 * @return Vetor C com elementos nas posições pares de A e Posições impares de B
@@ -20,56 +21,58 @@ public class Exercicios {
 		ArrayList<Integer> arrayC = new ArrayList<>();
 
 		for (int i = 0; i < arrayA.length; i++) {
-			if(i % 2 == 0) {
+			if (i % 2 == 0) {
 				arrayC.add(arrayA[i]);
-			}else {
+			} else {
 				arrayC.add(arrayB[i]);
 			}
 		}
 
 		return arrayC;
 	}
-	
+
 	/**
-	 * 10 - Analise de um vetor (Maior, Menor, Soma e Média dos elementos de um vetor
+	 * 10 - Analise de um vetor (Maior, Menor, Soma e Média dos elementos de um
+	 * vetor
+	 * 
 	 * @param A VetorA
 	 * @return VetorB com o resultado da analise
 	 */
-	public static ArrayList<Double> AnalisarVetor(double[] A){
-		
+	public static ArrayList<Double> AnalisarVetor(double[] A) {
+
 		ArrayList<Double> arrayA = new ArrayList<>();
 		for (int i = 0; i < A.length; i++) {
 			arrayA.add(A[i]);
 		}
 		ArrayList<Double> arrayB = new ArrayList<>();
-		arrayB.add(Collections.max(arrayA)); //Maior Elemento
-		arrayB.add(Collections.min(arrayA)); //Menor Elemento
-		
+		arrayB.add(Collections.max(arrayA)); // Maior Elemento
+		arrayB.add(Collections.min(arrayA)); // Menor Elemento
+
 		Double soma = 0d;
-		
+
 		for (int i = 0; i < A.length; i++) {
-			
-			soma = soma + arrayA.get(i); 
+
+			soma = soma + arrayA.get(i);
 		}
-		
-		arrayB.add(soma); //Soma
-		
-		arrayB.add(soma / A.length); //Média
-		
+
+		arrayB.add(soma); // Soma
+
+		arrayB.add(soma / A.length); // Média
+
 		return arrayB;
-		
+
 	}
-	
-	
+
 	/**
 	 * 9 - Cria um serie Fibonacci
+	 * 
 	 * @param quantidade Tamanho do Vetor
 	 * @return Serie Fibonacci
 	 */
-	public static ArrayList<Integer> criarSerieFibonacciComArray (int quantidade){
-		
+	public static ArrayList<Integer> criarSerieFibonacciComArray(int quantidade) {
+
 		ArrayList<Integer> fibonacci = new ArrayList<>();
-		
+
 		for (int i = 0; i < quantidade; i++) {
 			if (i == 0 || i == 1) {
 				fibonacci.add(1);
@@ -77,13 +80,42 @@ public class Exercicios {
 				fibonacci.add(fibonacci.get(i - 1) + fibonacci.get(i - 2));
 			}
 		}
-		
+
 		return fibonacci;
-		
+
 	}
-	
 	/**
-	 * 7 - Produto dos números pares de um vetor 
+	 * 8 - Ordena os maiores elementos para o final no vetor
+	 * @param array Vetor de Double
+	 */
+	public static ArrayList<Double> ordenarMaior(double[] array) {
+
+		ArrayList<Double> arrayA = new ArrayList<>();
+
+		int cont = 0;
+
+		for (int i = 0; i < array.length; i++) {
+
+			arrayA.add(array[i]);
+		}
+
+		Double maior = Collections.max(arrayA);
+
+		for (int i = 0; i < array.length; i++) {
+
+			if (array[i] == maior) {
+				cont++;
+				arrayA.set(array.length - cont, array[i]); // maior no ultimo
+				arrayA.set(i, array[array.length - cont]);
+			}
+		}
+
+		return arrayA;
+	}
+
+	/**
+	 * 7 - Produto dos números pares de um vetor
+	 * 
 	 * @param array de inteiros
 	 * @return produto dos numeros pares
 	 */
@@ -92,20 +124,20 @@ public class Exercicios {
 		int resultado = 1;
 
 		for (int i = 0; i < array.length; i++) {
-			if(array[i] != 0 && array[i] %2 == 0) {
-				
-					resultado = resultado * array[i];
+			if (array[i] != 0 && array[i] % 2 == 0) {
+
+				resultado = resultado * array[i];
 			}
 
-			if(resultado == 1) {
-			
+			if (resultado == 1) {
+
 				resultado = 0;
-			
+
 			}
 		}
-		
+
 		return resultado;
-		
+
 	}
 
 	/**
@@ -126,7 +158,7 @@ public class Exercicios {
 
 		return resultado;
 	}
-	
+
 	/**
 	 * 5 - Multiplica dois vetores de double
 	 * 
@@ -146,5 +178,4 @@ public class Exercicios {
 		return resultado;
 	}
 
-	
 }

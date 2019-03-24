@@ -11,7 +11,7 @@ public class Principal {
 	public static void main(String[] args) {
 
 		String[] opcoes = { "Calcular Peso Ideal",
-							"Serie Fibonacci" };
+							"Converter Decimal em Octadecimal" };
 
 		boolean continua = true;
 
@@ -24,7 +24,7 @@ public class Principal {
 				calcularPesoIdeal();
 				break;
 			case 2:
-				
+				converterDecimalBase8();
 				break;
 
 			case -1:
@@ -35,6 +35,16 @@ public class Principal {
 
 		} while (continua);
 
+	}
+
+	private static void converterDecimalBase8() {
+		
+		int num = Console.recuperaInteiro("Informe um numero inteiro: ");
+		
+		String base8 = Exercicios.converterDecimalBase8(num);
+		
+		System.out.println(base8);
+		
 	}
 
 	/**

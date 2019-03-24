@@ -56,7 +56,7 @@ public class Principal {
 				produtoNumerosPares();
 				break;
 			case 8:
-				
+				ordenarMaior();
 				break;
 			case 9:
 				criarSerieFibonacci();
@@ -88,6 +88,16 @@ public class Principal {
 		ArrayList<Integer> arrayC = Exercicios.mesclarVetores(arrayA, arrayB);
 		
 		System.out.println(arrayC);
+		
+	}
+	
+	private static void ordenarMaior() {
+		System.out.println("Criar Vetor");
+		double[] vetor = criarVetorDouble();
+				
+		ArrayList<Double> resultado = Exercicios.ordenarMaior(vetor);
+	
+		System.out.println(resultado);
 		
 	}
 	
@@ -214,6 +224,7 @@ public class Principal {
 		
 		int quantidade = Console.recuperaInteiro("Informe a Quantidade: ");
 		double[] array = new double[quantidade];
+		System.out.println("");
 		
 		for (int i = 0; i < quantidade; i++) {
 			array[i] = Console.recuperaDecimal("Informe o " + (i + 1) + "º valor: ");
