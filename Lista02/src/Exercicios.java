@@ -8,20 +8,22 @@ import java.util.ArrayList;
  */
 public class Exercicios {
 	
-public static ArrayList<Integer> criarSerieFibonacciComArray (int quantidade){
-	
-	ArrayList<Integer> fibonacci = new ArrayList<>();
-	
-	for (int i = 0; i < quantidade; i++) {
-		if (i == 0 || i == 1) {
-			fibonacci.add(1);
-		} else {
-			fibonacci.add(fibonacci.get(i - 1) + fibonacci.get(i - 2));
+	/**
+	 * Multiplica dois vetores de double
+	 * @param arrayA Array de double
+	 * @param arrayB Array de double
+	 * @return ArrayList com resultado da multiplicação dos itens dos arrays
+	 */
+	public static ArrayList<Double> multiplicarArray(double[] arrayA, double[] arrayB) {
+
+		ArrayList<Double> resultado = new ArrayList<>();
+
+		for (int i = 0; i < arrayA.length; i++) {
+
+			resultado.add(arrayA[i] * arrayB[i]);
 		}
+
+		return resultado;
 	}
-	
-	return fibonacci;
-	
-}
 
 }
