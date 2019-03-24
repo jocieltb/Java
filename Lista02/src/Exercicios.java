@@ -26,4 +26,21 @@ public class Exercicios {
 		return resultado;
 	}
 
+	/**
+	 * Produto Escalar dois vetores de double
+	 * @param arrayA Array de inteiros
+	 * @param arrayB Array de inteiros
+	 * @return Produto Escalar dos itens dos arrays
+	 */
+	public static int produtoEscalarDeDoisArray(int[] arrayA, int[] arrayB) {
+
+		int resultado = 0;
+
+		for (int i = 0; i < arrayA.length; i++) {
+
+			resultado = resultado + (arrayA[i] * arrayB[i]);
+		}
+
+		return resultado;
+	}
 }

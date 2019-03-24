@@ -9,7 +9,8 @@ public class Principal {
 							"Maior Elemento",
 							"Menor Elemento",
 							"Vetor Invertido",
-							"Multiplicar Vetores"};
+							"Multiplicar Dois Vetores",
+							"Produto Escalar de Dois Vetores"};
 
 		boolean continua = true;
 
@@ -43,6 +44,9 @@ public class Principal {
 			case 5:
 				multiplicarVetores();
 				break;
+			case 6:
+				produtoEscalarDeDoisArray();
+				break;
 			case -1:
 
 				continua = false;
@@ -51,9 +55,23 @@ public class Principal {
 
 		} while (continua);
 	}
+	/**
+	 * Produto Escalar de dois vetores de inteiros.
+	 */
+	private static void produtoEscalarDeDoisArray() {
+		System.out.println("Criar arrayA");
+		int[] arrayA = criarVetorInteiro();
+		System.out.println("Criar arrayB");
+		int[] arrayB = criarVetorInteiro();
+		
+		int resultado = Exercicios.produtoEscalarDeDoisArray(arrayA, arrayB);
+		
+		System.out.println(resultado);
+		
+	}
 
 	/**
-	 * Mulitiplica dois vetores de double
+	 * Mulitiplica dois vetores de double.
 	 */
 	public static void multiplicarVetores() {
 		System.out.println("Criar arrayA");
@@ -66,6 +84,7 @@ public class Principal {
 		System.out.println(resultadoMultiplicacao);
 		
 	}
+	
 	/**
 	 * Cria um ArrayList de inteiros
 	 */
