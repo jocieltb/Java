@@ -14,7 +14,8 @@ public class Principal {
 							"Produto Números Pares",
 							"Ordenar Maior",
 							"Serie Fibonacci",
-							"Analisar Vetor"};
+							"Analisar Vetor",
+							"Mesclar Vetores"};
 
 		boolean continua = true;
 
@@ -63,6 +64,9 @@ public class Principal {
 			case 10:
 				AnalisarVetor();
 				break;
+			case 11:
+				mesclarVetores();
+				break;
 			case -1:
 
 				continua = false;
@@ -72,6 +76,24 @@ public class Principal {
 		} while (continua);
 	}
 	
+	/**
+	 * Mesclar elementos de dois vetores
+	 */
+	public static void mesclarVetores() {
+		System.out.println("Criar arrayA");
+		int[] arrayA = criarVetorInteiro();
+		System.out.println("Criar arrayB");
+		int[] arrayB = criarVetorInteiro();
+		
+		ArrayList<Integer> arrayC = Exercicios.mesclarVetores(arrayA, arrayB);
+		
+		System.out.println(arrayC);
+		
+	}
+	
+	/**
+	 * Analise de um vetor (Maior, Menor, Soma e Média dos elementos de um vetor
+	 */
 	private static void AnalisarVetor() {
 		System.out.println("Criar array");
 		double[] A = criarVetorDouble();

@@ -8,9 +8,30 @@ import java.util.Collections;
  *
  */
 public class Exercicios {
+		
+	/**
+	 * 11 - Mesclar elementos de dois vetores
+	 * @param arrayA Vetor A
+	 * @param arrayB Vetor B
+	 * @return Vetor C com elementos nas posições pares de A e Posições impares de B
+	 */
+	public static ArrayList<Integer> mesclarVetores(int[] arrayA, int[] arrayB) {
+
+		ArrayList<Integer> arrayC = new ArrayList<>();
+
+		for (int i = 0; i < arrayA.length; i++) {
+			if(i % 2 == 0) {
+				arrayC.add(arrayA[i]);
+			}else {
+				arrayC.add(arrayB[i]);
+			}
+		}
+
+		return arrayC;
+	}
 	
 	/**
-	 * Analise de um vetor (Maior, Menor, Soma e Média dos elementos de um vetor
+	 * 10 - Analise de um vetor (Maior, Menor, Soma e Média dos elementos de um vetor
 	 * @param A VetorA
 	 * @return VetorB com o resultado da analise
 	 */
