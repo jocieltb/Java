@@ -8,7 +8,13 @@ import java.util.Collections;
  *
  */
 public class Exercicios {
-
+	
+	/**
+	 * Dicas Eclipse
+	 * Alt+Shift+R - Renomear variaveis e metodos
+	 */
+	
+	
 	/**
 	 * 11 - Mesclar elementos de dois vetores
 	 * 
@@ -16,6 +22,7 @@ public class Exercicios {
 	 * @param arrayB Vetor B
 	 * @return Vetor C com elementos nas posições pares de A e Posições impares de B
 	 */
+	
 	public static ArrayList<Integer> mesclarVetores(int[] arrayA, int[] arrayB) {
 
 		ArrayList<Integer> arrayC = new ArrayList<>();
