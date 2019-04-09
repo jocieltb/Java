@@ -6,16 +6,17 @@ import java.util.ArrayList;
  *
  */
 public class Paciente {
-	
+
 	private String codigo;
-	
+
 	private String nome;
-	
-	
+
 	private ArrayList<String> doencas;
 
-	
-	
+	/**
+	 * @param codigo
+	 * @param nome
+	 */
 	public Paciente(String codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
@@ -38,17 +39,17 @@ public class Paciente {
 		this.nome = nome;
 	}
 
-	public ArrayList<String> getHistorico(){
-		
+	public ArrayList<String> getHistorico() {
 		return this.doencas;
-		
 	}
 
 	public void addHistorico(String doenca) {
-		
-		//if(this.doencas == null) {
-		//	this.doencas = new ArrayList<>();
-		//}
 		this.doencas.add(doenca);
 	}
+
+	@Override
+	public String toString() {
+		return "Paciente [codigo=" + codigo + ", nome=" + nome + ", doencas=" + doencas + "]";
+	}
+
 }
