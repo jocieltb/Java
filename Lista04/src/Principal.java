@@ -25,10 +25,8 @@ public class Principal {
 
 			switch (opcao) {
 			case 1:
-
 				criarLivro();
-
-			break;
+				break;
 			case 2:
 				executarCenario2();
 				break;
