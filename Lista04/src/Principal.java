@@ -14,8 +14,10 @@ public class Principal {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
 		
 		String[] opcoes = { "Livro", "Pontos", "Compromisso", "Pilha" };
+
 
 		boolean continuar = true;
 		do {
@@ -23,17 +25,22 @@ public class Principal {
 
 			switch (opcao) {
 			case 1:
+
 				criarLivro();
-				break;
+
+			break;
 			case 2:
 				executarCenario2();
 				break;
 			case 3:
 				executarCenario3();
 				break;
+
 			case 4:
 				executarCenario4();
 				break;
+
+
 			case -1:
 				continuar = false;
 				System.out.println("Saindo do programa...");
@@ -42,6 +49,7 @@ public class Principal {
 		} while (continuar);
 
 	}
+
 	
 	/**
 	 * Executa o Cenário 4
@@ -99,6 +107,7 @@ public class Principal {
 		
 		
 	}
+
 
 	/**
 	 * Executa o Cenário 3
