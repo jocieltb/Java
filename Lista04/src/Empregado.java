@@ -6,7 +6,7 @@ import java.util.Date;
  * @author 1829799
  *
  */
-public class Empregado {
+public abstract class Empregado {
 	
 	private String nome;
 	private Date dataNascimento;
