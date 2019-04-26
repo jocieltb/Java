@@ -16,12 +16,12 @@ public abstract class Imposto {
 
 	public Double calcularImpostoTotal() {
 
-		return null;
+		return valor + calcularImpostoFederal() + calcularImpostoEstadual();
 
 	}
 
 	public Double calcularImpostoFederal() {
-		return null;
+		return valor * 0.15;
 	}
 	
 	public abstract Double calcularImpostoEstadual();
