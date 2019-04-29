@@ -16,7 +16,7 @@ public abstract class Imposto {
 
 	public Double calcularImpostoTotal() {
 
-		return valor + calcularImpostoFederal() + calcularImpostoEstadual();
+		return calcularImpostoFederal() + calcularImpostoEstadual();
 
 	}
 

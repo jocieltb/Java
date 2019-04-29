@@ -65,8 +65,6 @@ public class Principal {
 
 			case 1: // Adicionar
 				criarEmpresa();
-				System.out.println("Empresa adicionada!");
-				System.out.println();
 				break;
 
 			case 2: // Consultar
@@ -97,6 +95,7 @@ public class Principal {
 						System.out.println("Empresa Excluida!");
 					} else {
 						System.out.println("Exclusão cancelada...");
+						System.out.println();
 					}
 				}
 
@@ -121,7 +120,7 @@ public class Principal {
 			switch (opcao) {
 
 			case 1:
-
+				emitirNotas();
 				break;
 
 			case 2:
@@ -139,6 +138,13 @@ public class Principal {
 
 		} while (continua);
 
+	}
+
+	private static void emitirNotas() {
+		
+		
+		
+		
 	}
 
 	private static void menuRelatorios() {
@@ -173,7 +179,7 @@ public class Principal {
 	/**
 	 * Localiza uma empresa no ArrayList empresas
 	 * @param cnpj parametro de busca
-	 * @return um int (index do ArrayList empresas)
+	 * @return um inteiro com index do ArrayList empresas
 	 */
 	private static int consultarEmpresa(String cnpj) {
 
@@ -181,7 +187,7 @@ public class Principal {
 		int i = -1;
 		for (Empresa empresa : empresas) {
 			i++;
-			if (consultarEmpresa.equalsIgnoreCase(empresa.getCnpj())) {
+			if (consultarEmpresa.compareTo(empresa.getCnpj()) == 0) {
 				return i;
 			}
 		}
@@ -196,10 +202,16 @@ public class Principal {
 
 		String nome = Console.recuperaTexto("Digite o nome da empresa");
 		String cnpj = Console.recuperaTexto("Digite o CNPJ da empresa");
-		Empresa empresa = new Empresa(nome, cnpj);
 
-		empresas.add(empresa);
+		int index = consultarEmpresa(cnpj);
 
+		if (index == -1) {
+			Empresa empresa = new Empresa(nome, cnpj);
+			empresas.add(empresa);
+			System.out.println("Empresa adicionada!");
+			System.out.println();
+		} else {
+			System.out.println("CNPJ já cadastrado...");
+		}
 	}
-
 }

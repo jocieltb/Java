@@ -10,7 +10,7 @@ public class Empresa {
 	
 	private String cnpj;
 	
-	private ArrayList<NotaFiscal> notasFiscais;
+	private ArrayList<NotaFiscal> notasFiscais = new ArrayList<>();
 	
 	public Empresa(String nome, String cnpj) {
 		this.nome = nome;
@@ -39,6 +39,14 @@ public class Empresa {
 
 	public void setNotasFiscais(ArrayList<NotaFiscal> notasFiscais) {
 		this.notasFiscais = notasFiscais;
+	}
+	
+	public ArrayList<NotaFiscal> GetNotasFiscaisValidas(){
+		ArrayList notasFiscaisValidas = new ArrayList<>();
+		
+		
+		
+		return  notasFiscaisValidas;
 	}
 	
 	@Override

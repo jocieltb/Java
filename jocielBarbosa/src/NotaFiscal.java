@@ -7,21 +7,16 @@ import java.util.Date;
 public class NotaFiscal {
 
 	private String numero;
-	
 	private String descricao;
-	
 	private Date dataEmissao;
-	
 	private Imposto imposto;
-	
 	private Double valor;
-	
 	private Double valorComImposto;
-	
 	private boolean cancelada;
-
+	
 	public NotaFiscal(String numero, String descricao, Date dataEmissao, Imposto imposto, Double valor,
 			Double valorComImposto, boolean cancelada) {
+		super();
 		this.numero = numero;
 		this.descricao = descricao;
 		this.dataEmissao = dataEmissao;
