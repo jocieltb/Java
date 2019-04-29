@@ -33,6 +33,14 @@ public class Empresa {
 		this.cnpj = cnpj;
 	}
 
+	public ArrayList<NotaFiscal> getNotasFiscais() {
+		return notasFiscais;
+	}
+
+	public void setNotasFiscais(ArrayList<NotaFiscal> notasFiscais) {
+		this.notasFiscais = notasFiscais;
+	}
+	
 	@Override
 	public String toString() {
 		return "Nome: " + nome + "\nCnpj: " + cnpj;

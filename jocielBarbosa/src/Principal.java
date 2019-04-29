@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Classe principal da aplicação
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  *
  */
 public class Principal {
-	
+
 	static ArrayList<Empresa> empresas = new ArrayList<>();
 
 	/**
@@ -15,23 +16,32 @@ public class Principal {
 	 * 
 	 * @param args
 	 */
+
 	public static void main(String[] args) {
-		String[] opcoes = { "Cadastrar", "Consultar" };
+
+		/**
+		 * Menu Principal
+		 */
+
+		ArrayList<Empresa> empresas = new ArrayList<>();
+		String[] opcoes = { "Empresas", "Notas Fiscais", "Relatórios" };
 		boolean continua = true;
 		do {
-			int opcao = Console.mostrarMenu(opcoes, "Menu Empresa", null);
+			int opcao = Console.mostrarMenu(opcoes, "Sistema de Notas", null);
 			switch (opcao) {
-			
+
 			case 1:
-				Empresa nova = criarEmpresa();
-				empresas.add(nova);
-				System.out.println("Empresa adicionada!");
+				menuEmpresa();
 				break;
-				
+
 			case 2:
-				consultarEmpresa();
+
 				break;
-				
+
+			case 3:
+
+				break;
+
 			case -1:
 				System.out.println("Saindo do Sistema...");
 				continua = false;
@@ -42,60 +52,153 @@ public class Principal {
 
 	}
 
-	private static void menuNotasFiscais() {
-		
-		String[] opcoes = { "Cadastrar", "Consultar", "Excluir" };
+	private static void menuEmpresa() {
+
+		String[] opcoesMenuEmpresas = { "Cadastrar", "Consultar", "Excluir" };
+		boolean continua = true;
+		String buscaCNPJ;
+		int index = 0;
+		do {
+			int opcaoMenuEmpresas = Console.mostrarMenu(opcoesMenuEmpresas, "Empresas", null);
+
+			switch (opcaoMenuEmpresas) {
+
+			case 1: // Adicionar
+				criarEmpresa();
+				System.out.println("Empresa adicionada!");
+				System.out.println();
+				break;
+
+			case 2: // Consultar
+				
+				buscaCNPJ = Console.recuperaTexto("Informe o CNPJ: ");
+				index = consultarEmpresa(buscaCNPJ);
+				
+				if (index >= 0) {
+					System.out.println(empresas.get(index));
+					System.out.println();
+
+				} else {
+					System.out.println("CNPJ não entrado...");
+					System.out.println();
+				}
+
+				break;
+			case 3: // Excluir
+
+				buscaCNPJ = Console.recuperaTexto("Informe o CNPJ: ");
+				index = consultarEmpresa(buscaCNPJ);
+
+				if (index >= 0) {
+					System.out.println();
+					String confirmacao = Console.recuperaTexto("Deseja excluir essa empresa? Sim(S) Não(N): ");
+					if (confirmacao.equalsIgnoreCase("s")) {
+						empresas.remove(index);
+						System.out.println("Empresa Excluida!");
+					} else {
+						System.out.println("Exclusão cancelada...");
+					}
+				}
+
+				break;
+
+			case -1:
+				System.out.println("Saindo do Sistema...");
+				continua = false;
+				break;
+			}
+
+		} while (continua);
+
+	}
+
+	private static void menuNotaFiscal() {
+
+		String[] opcoes = { "Emitir", "Consultar", "Cancelar" };
 		boolean continua = true;
 		do {
-			int opcao = Console.mostrarMenu(opcoes, "Menu Notas Fiscais", null);
+			int opcao = Console.mostrarMenu(opcoes, "Notas Fiscais", null);
 			switch (opcao) {
-			
+
 			case 1:
-				
+
 				break;
 
+			case 2:
+
+				break;
+
+			case 3:
+
+				break;
 			case -1:
-				System.out.println("Saindo do Sistema...");
+				System.out.println("Voltando ao Menu Principal...");
 				continua = false;
 				break;
 			}
 
 		} while (continua);
-		
+
 	}
 
-	private static void consultarEmpresa() {
-		
-		String consultaEmpresa = Console.recuperaTexto("Informe qual empresa deseja consultar: ");
-		System.out.println();
+	private static void menuRelatorios() {
+
+		String[] opcoes = { "Por Empresas", "Por Valor", "Notas Canceladas" };
+		boolean continua = true;
+		do {
+			int opcao = Console.mostrarMenu(opcoes, "Relatórios", null);
+			switch (opcao) {
+
+			case 1:
+
+				break;
+
+			case 2:
+
+				break;
+
+			case 3:
+
+				break;
+			case -1:
+				System.out.println("Voltando ao Menu Principal...");
+				continua = false;
+				break;
+			}
+
+		} while (continua);
+
+	}
+
+	/**
+	 * Localiza uma empresa no ArrayList empresas
+	 * @param cnpj parametro de busca
+	 * @return um int (index do ArrayList empresas)
+	 */
+	private static int consultarEmpresa(String cnpj) {
+
+		String consultarEmpresa = cnpj;
+		int i = -1;
 		for (Empresa empresa : empresas) {
-			if (consultaEmpresa.equalsIgnoreCase(empresa.getNome())) {
-				String excluir = Console.recuperaTexto("Deseja excluir esta empresa (S para sim, qquer coisa para não): ");
-				if (excluir.equalsIgnoreCase("S")) {
-					empresas.remove(0);
-					System.out.println("Empresa Excluida...");
-					
-				} else {
-					menuNotasFiscais();
-				}
+			i++;
+			if (consultarEmpresa.equalsIgnoreCase(empresa.getCnpj())) {
+				return i;
 			}
 		}
-		
+		return -1;
 	}
 
-	private static Empresa criarEmpresa() {
+	/**
+	 * Cria uma empresa
+	 * 
+	 */
+	private static void criarEmpresa() {
 
 		String nome = Console.recuperaTexto("Digite o nome da empresa");
 		String cnpj = Console.recuperaTexto("Digite o CNPJ da empresa");
 		Empresa empresa = new Empresa(nome, cnpj);
-		empresa.setNome(nome);
-		empresa.setCnpj(cnpj);
-
-		ArrayList<Empresa> empresas = new ArrayList<>();
 
 		empresas.add(empresa);
-
-		return empresa;
 
 	}
 

@@ -5,7 +5,7 @@
  */
 public abstract class Imposto {
 
-	private Double aliquotaFederal;
+	private Double aliquotaFederal = 0.15;
 
 	protected Double valor;
 
@@ -21,7 +21,7 @@ public abstract class Imposto {
 	}
 
 	public Double calcularImpostoFederal() {
-		return valor * 0.15;
+		return valor * aliquotaFederal;
 	}
 	
 	public abstract Double calcularImpostoEstadual();
