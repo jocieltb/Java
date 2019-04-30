@@ -23,7 +23,6 @@ public class Principal {
 		 * Menu Principal
 		 */
 
-		ArrayList<Empresa> empresas = new ArrayList<>();
 		String[] opcoes = { "Empresas", "Notas Fiscais", "Relatórios" };
 		boolean continua = true;
 		do {
@@ -140,12 +139,7 @@ public class Principal {
 
 	}
 
-	private static void emitirNotas() {
-		
-		
-		
-		
-	}
+	
 
 	private static void menuRelatorios() {
 
@@ -176,6 +170,18 @@ public class Principal {
 
 	}
 
+	
+	private static NotaFiscal emitirNotas() {
+		
+		 String descricao = Console.recuperaTexto("Informe o motivo da nota: ");
+		 Double valor = Console.recuperaDecimal("Informe o Valor da nota: ");
+		 String estado = Console.recuperaTexto("Informe o Estado: ");
+		 
+		 NotaFiscal nota = new NotaFiscal(null, descricao, new Date(), null, valor, null, true);
+		 						
+		return nota;		 
+	}
+	
 	/**
 	 * Localiza uma empresa no ArrayList empresas
 	 * @param cnpj parametro de busca
@@ -214,4 +220,6 @@ public class Principal {
 			System.out.println("CNPJ já cadastrado...");
 		}
 	}
+	
+	
 }

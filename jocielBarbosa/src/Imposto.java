@@ -5,7 +5,7 @@
  */
 public abstract class Imposto {
 
-	private Double aliquotaFederal = 0.15;
+	static Double aliquotaFederal = 0.15;
 
 	protected Double valor;
 
