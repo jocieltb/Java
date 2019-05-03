@@ -17,7 +17,7 @@ public class Auxiliar {
 		if (index == -1) {
 			Empresa empresa = new Empresa(nome, cnpj);
 			empresas.add(empresa);
-			System.out.println("Empresa adicionada!");
+			System.out.println("Empresa cadastrada...");
 			System.out.println();
 		} else {
 			System.out.println("CNPJ já cadastrado...");
@@ -42,7 +42,8 @@ public class Auxiliar {
 		try {
 			Empresa empresa = pegarEmpresa(cnpj);
 			Double faturamento = Faturamento.getSomaValorNotas(empresa.GetNotasFiscaisValidas());
-			System.out.println("\nFaturamento:\nEmpresa: " + empresa.getNome() + "\nFaturamento:" + faturamento+"\n");
+			System.out
+					.println("\nFaturamento:\nEmpresa: " + empresa.getNome() + "\nFaturamento: " + faturamento + "\n");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -74,16 +75,14 @@ public class Auxiliar {
 	 */
 	public static void emitirNotas() {
 		try {
-			
+
 			String cnpj = Console.recuperaTexto("Informe o CNPJ da empresa: ");
 			Empresa empresaSolicitada = pegarEmpresa(cnpj);
 			ArrayList<NotaFiscal> notas = empresaSolicitada.getNotasFiscais();
 			int numeroNota = empresaSolicitada.getNotasFiscais().size() + 1;
 			empresaSolicitada.addNotaFiscal(criarNota(numeroNota));
 			System.out.println("Nota Emitida...\n");
-				
 
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -117,24 +116,23 @@ public class Auxiliar {
 	public static void cancelarNotas() {
 
 		String cnpj = Console.recuperaTexto("Informe o CNPJ da empresa: ");
+
 		try {
 
-			System.out.println(pegarEmpresa(cnpj).getNotasFiscais());
-			String numeroNota = Console.recuperaTexto("Informe o número da nota: ");
+			System.out.println(pegarEmpresa(cnpj).GetNotasFiscaisValidas());
+			String numeroNota = Console.recuperaTexto("Informe o número da nota ou zero para voltar: ");
 			ArrayList<NotaFiscal> notas = pegarEmpresa(cnpj).getNotasFiscais();
 
 			for (NotaFiscal nota : notas) {
 				if (numeroNota.equalsIgnoreCase(nota.getNumero())) {
-					
+
 					if (nota.getValorComImposto() <= 10000) {
 						nota.setCancelada(true);
-						System.out.println("Nota cancelada...");
+						System.out.println("Nota cancelada...\n");
 					} else if (nota.getValorComImposto() > 10000) {
 						System.out.println("Notas com valores acima de R$ 10.000 não pode ser Canceladas\n");
 					}
 
-				} else {
-					System.out.println("Nota não encontrada...\n");
 				}
 			}
 		} catch (Exception e) {
@@ -268,21 +266,21 @@ public class Auxiliar {
 			String cnpj = Console.recuperaTexto("Informe o CNPJ da empresa: ");
 			ArrayList<NotaFiscal> notas = pegarEmpresa(cnpj).getNotasFiscais();
 			for (NotaFiscal nota : notas) {
-				
-					if (nota.getValorComImposto() <= 10000) {
-						nota.setCancelada(true);
-						System.out.println("Nota número "+nota.getNumero()+ "cancelada...");
-					} else {
-						System.out.println("Nota número "+nota.getNumero()+"\nNão pode ser cancelada (Valor excede R$ 10.000");
-					}
 
-							}
-		}catch(
+				if (nota.getValorComImposto() <= 10000) {
+					nota.setCancelada(true);
+					System.out.println("Nota Nº " + nota.getNumero() + " cancelada...");
+				} else {
+					System.out.println(
+							"Nota número " + nota.getNumero() + "\nNão pode ser cancelada (Valor excede R$ 10.000");
+				}
 
-	Exception e)
-	{
-		System.out.println(e.getMessage());
+			}
+		} catch (
+
+		Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
-}
 
 }
